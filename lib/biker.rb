@@ -9,4 +9,9 @@ attr_reader :name, :max_distance, :rides,
     @rides = {}
     @acceptable_terrain = []
   end
+
+  def learn_terrain!(new_terrain) 
+    @acceptable_terrain << new_terrain
+  end
+
 end
