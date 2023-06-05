@@ -14,5 +14,13 @@ RSpec.describe "Rides" do
       # expect(ride1.total_distance).to eq(21.4)
     end
 
+    it "ride2 can initialize with attributes" do
+      ride2 = Ride.new({name: "Town Lake", distance: 14.9, loop: true, terrain: :gravel})
+      
+      expect(ride2).to be_a(Ride)
+      expect(ride2.loop?).to be(true)
+      expect(ride2.total_distance).to eq(14.9)
+    end
+
   end
 end
