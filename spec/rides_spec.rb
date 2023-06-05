@@ -11,7 +11,7 @@ RSpec.describe "Rides" do
       expect(ride1.distance).to eq(10.7)
       expect(ride1.terrain).to eq(:hills)
       expect(ride1.loop?).to eq(false)
-      # expect(ride1.total_distance).to eq(21.4)
+      expect(ride1.total_distance).to eq(21.4)
     end
 
     it "ride2 can initialize with attributes" do
