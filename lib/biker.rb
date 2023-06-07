@@ -14,13 +14,20 @@ attr_reader :name, :max_distance, :rides,
     @acceptable_terrain << new_terrain
   end
 
-  #This method was a doozy. I could not figure out how to NOT overwrite my array.
-  #I will be focusing on this with student support today, so any notes are greatly appreciated. 
-
   def log_ride(ride, time)
-   # # return "cannot complete ride" if !distance < biker.max_distance && @terrain.include?(@acceptable_terrain)
-      @rides[ride] = []
-      @rides[ride] = [] << time
+    if @acceptable_terrain.include?(ride.terrain) && @max_distance >= ride.total_distance
+      if @rides[ride].nil?
+        @rides[ride] = [] 
+      end
+      @rides[ride] << time
+    end
+  #  if ride.total_distance > self.max_distance || !@acceptable_terrain.include?(ride.terrain)
+  #   return "cannot complete ride" 
+  #  end
   end
   
+  def personal_record(ride)
+    return false if @rides[ride].nil?
+    @rides[ride].min
+  end
 end

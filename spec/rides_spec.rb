@@ -1,4 +1,4 @@
-require './lib/rides'
+require './lib/ride'
 require 'rspec'
 
 RSpec.describe "Rides" do 
